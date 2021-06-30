@@ -65,7 +65,17 @@ q3_answer = "SELECT name
 # Quais são as vantagens/desvantagens de se usar a arquitetura MVC (Model, View e
 # Controller)?
 
-q4_answer = ""
+q4_answer = "
+As convenções na organização de uma aplicação com arquitetura MVC facilitam
+o desenvolvimento rápido. Além disso, a divisão das tarefas entre Model, View e
+Controller permitem uma manutenção mais ágil do sistema e que diversos desenvolvedores
+trabalhem em conjunto e realizem testes sem interferir de forma prejudicial
+em outras partes do código. Por outro lado, são muitos arquivos sendo gerenciados,
+podendo afetar a performance da aplicação e a organização dos desenvolvedores.
+Apesar do lado negativo citado, eu nunca tive uma experiência ruim com framework
+MVC na minha curta experiência como desenvolvedora, o que me leva a crer que tudo
+depende do que a aplicação requere para escolher um framework adequado.
+"
 
 ## Q.5
 # Usando Ruby on Rails, cite pelo menos uma forma de criar uma rota para um método
