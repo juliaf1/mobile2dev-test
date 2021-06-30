@@ -44,10 +44,10 @@ CREATE TABLE `user_events` (
 );
 
 Caso os prêmios sejam particulares a cada evento e seja do interesse da aplicação
-guardar mais informações sobre eles (ex: descrição, data máxima para reinvidicação etc.),
-minha proposta seria adicionar outras duas tableas relacionais: EventPrizes,
-com a id do evento e as informaçõs particulares dos seus prêmios, e EventWinners,
-com a id do usuário e a id do prêmio recebido.
+guardar mais informações sobre eles (ex: descrição, data máxima para reinvidicação,
+requisitos para ganhar etc.), minha proposta seria adicionar outras duas tabelas
+relacionais: EventPrizes, com a id do evento e as informaçõs particulares dos
+seus prêmios, e EventWinners, com a id do usuário e a id do prêmio recebido.
 O design desse esquema está representado no arquivo q2_db_schema.png.
 "
 
@@ -69,11 +69,11 @@ q4_answer = "
 As convenções na organização de uma aplicação com arquitetura MVC facilitam
 o desenvolvimento rápido. Além disso, a divisão das tarefas entre Model, View e
 Controller permitem uma manutenção mais ágil do sistema e que diversos desenvolvedores
-trabalhem em conjunto e realizem testes sem interferir de forma prejudicial
-em outras partes do código. Por outro lado, são muitos arquivos sendo gerenciados,
+trabalhem em conjunto e realizem testes sem interferir de forma prejudicial em
+outras partes do código. Por outro lado, são muitos arquivos sendo gerenciados,
 podendo afetar a performance da aplicação e a organização dos desenvolvedores.
 Apesar do lado negativo citado, eu nunca tive uma experiência ruim com framework
-MVC na minha curta experiência como desenvolvedora, o que me leva a crer que tudo
+MVC na minha curta vivência como desenvolvedora, o que me leva a crer que tudo
 depende do que a aplicação requere para escolher um framework adequado.
 "
 
