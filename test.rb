@@ -17,7 +17,25 @@ end
 # guardar a informação sobre quem participou de cada evento e quem ganhou os prêmios.
 # Modele um banco de dados capaz de suportar essas regras.
 
-q2_answer = ""
+q2_answer = "
+CREATE TABLE `users` (
+  `id`  INTEGER PRIMARY KEY AUTOINCREMENT,
+  `name` TEXT
+);
+
+CREATE TABLE `events` (
+  `id`  INTEGER PRIMARY KEY AUTOINCREMENT,
+  `name` TEXT
+);
+
+CREATE TABLE `user_events` (
+  `id`  INTEGER PRIMARY KEY AUTOINCREMENT,
+  `is_winner` BOOLEAN default 0,
+  `prize` ENUM(0, 1, 2, 3),
+  FOREIGN KEY(user) REFERENCES users(id),
+  FOREIGN KEY(event) REFERENCES events(id)
+);
+"
 
 ## Q.3
 # Considere um sistema onde cada Usuário possui os atributos nome (String), idade
