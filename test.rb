@@ -18,6 +18,13 @@ end
 # Modele um banco de dados capaz de suportar essas regras.
 
 q2_answer = "
+Caso os prêmios distribuídos nos eventos sejam padronizados (ex: bronze, prata e ouro),
+minha proposta seria uma tabela de Users com as informações pertinentes a cada usuário,
+uma tabela de Events, com as informações pertinentes a cada evento e uma tabela relacional
+de UserEvents, com a id do usuário, a id do evento participado, um campo boolean (is_winner)
+informando se o usuário é ganhador e um campo enum (prize) informando qual dos três prêmios
+o usuário teria ganhado.
+
 CREATE TABLE `users` (
   `id`  INTEGER PRIMARY KEY AUTOINCREMENT,
   `name` TEXT
@@ -31,10 +38,17 @@ CREATE TABLE `events` (
 CREATE TABLE `user_events` (
   `id`  INTEGER PRIMARY KEY AUTOINCREMENT,
   `is_winner` BOOLEAN default 0,
-  `prize` ENUM(0, 1, 2, 3),
+  `prize` ENUM(1, 2, 3),
   FOREIGN KEY(user) REFERENCES users(id),
   FOREIGN KEY(event) REFERENCES events(id)
 );
+
+Caso os prêmios sejam particulares a cada evento e seja do interesse da aplicação
+guardar mais informações sobre eles (ex: descrição, data máxima para reinvidicação etc.),
+minha proposta seria adicionar outras duas tableas relacionais: EventPrizes,
+com a id do evento e as informaçõs particulares dos seus prêmios, e EventWinners,
+com a id do usuário e a id do prêmio recebido.
+O design desse esquema está representado no arquivo q2_db_schema.png.
 "
 
 ## Q.3
@@ -57,7 +71,13 @@ q4_answer = ""
 # Usando Ruby on Rails, cite pelo menos uma forma de criar uma rota para um método
 # chamado find_user dentro de um controller com o nome UsersController.
 
-q5_answer = ""
+q5_answer = "
+Caso a rota deva pertencer a um membro específico:
+#{get '/users/:id', to: "users#find_user"}
+
+Caso a rota não precise pertencer a um membro específico:
+#{get '/find_user', to: "users#find_user"}
+"
 
 ## Q.6
 # Considerando a estrutura padrão de arquivos de um projeto feito com Ruby on Rails, em
@@ -65,5 +85,16 @@ q5_answer = ""
 # que modo é possível saber qual controller é responsável por gerenciar uma determinada
 # view?
 
-q6_answer = ""
+q6_answer = "
+Os models, controllers e views devem se encontrar em suas respectivas pastas
+(ex: /controllers) dentro do diretório app.
+Paths de exemplo:
+./name_of_the_app/app/controllers/users_controller.rb
+./name_of_the_app/app/models/user.rb
+./name_of_the_app/app/views/users/find_user.rb
+
+É possível saber qual controller é responsável por gerenciar uma determinada view
+por meio da pasta a qual ela pertence (ex: Em app/views/events/show.rb, a view pertence
+ao controller com o nome EventsController)
+"
 
