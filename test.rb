@@ -78,7 +78,7 @@ outras partes do código. Por outro lado, são muitos arquivos sendo gerenciados
 podendo afetar a performance da aplicação e a organização dos desenvolvedores.
 Apesar do lado negativo citado, eu nunca tive uma experiência ruim com framework
 MVC na minha curta vivência como desenvolvedora, o que me leva a crer que tudo
-depende do que a aplicação requere para escolher um framework adequado.
+depende do que a aplicação requer para escolher um framework adequado.
 "
 
 ## Q.5
